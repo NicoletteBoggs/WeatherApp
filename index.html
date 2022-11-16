@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Dashboard</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <header class="container-fluid text-center text-dark bg-light p-2 mb-4">
+      <h1>Weather Dashboard</h1>
+    </header>
+    <main class="container-fluid text-center mb-2">
+      <div class="row">
+        <aside class="col-lg-3">
+          <h2>Search by City:</h2>
+          <form id="search-form">
+            <div class="mb-2">
+              <input type="text" class="form-control" id="city-input" aria-describedby="cityInput" />
+            </div>
+            <button type="submit" id="search-button" class="btn btn-warning w-100">Search</button>
+          </form>
+          <div id="recentBtnContainer">        
+          </div>
+        </aside>
+        <section class="col-lg-4 text-white bg-info border border-dark"  id="current-forecast">        
+        </section>
+      </div>  
+      <div class="row">        
+        <section class="container-fluid d-flex align-items-end">          
+          <div class="card">
+            <h3>5-Day Forecast:</h3>
+            <div class="card-body text-center text-white bg-secondary border border-white">
+              <p id="date1" class=></p>
+              <p id="icon1"></p>
+              <p id="temp1"></p>
+              <p id="wind1"></p>
+              <p id="humidity1"></p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body text-center text-white bg-secondary border border-white">
+              <p id="date9"></p>
+              <p id="icon9"></p>
+              <p id="temp9"></p>
+              <p id="wind9"></p>
+              <p id="humidity9"></p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body text-center text-white bg-secondary border border-white">
+              <p id="date17"></p>
+              <p id="icon17"></p>
+              <p id="temp17"></p>
+              <p id="wind17"></p>
+              <p id="humidity17"></p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body text-center text-white bg-secondary border border-white">
+              <p id="date25"></p>
+              <p id="icon25"></p>
+              <p id="temp25"></p>
+              <p id="wind25"></p>
+              <p id="humidity25"></p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body text-center text-white bg-secondary border border-white">
+              <p id="date33"></p>
+              <p id="icon33"></p>
+              <p id="temp33"></p>
+              <p id="wind33"></p>
+              <p id="humidity33"></p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+    <script src="./assets/script.js"></script>
+  </body>
+</html>
