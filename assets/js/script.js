@@ -6,11 +6,11 @@ var searchBtn = document.getElementById("search-button");
 
 var todayForecast = document.getElementById("current-forecast");
 
-//api.openweathermap.org/data/3.0/onecall?lat={lat}&lon={lon}&exclude={part}&appid={API key}
+// https://api.openweathermap.org/data/3.0/onecall?lat={lat}&lon={lon}&exclude={part}&appid={API key}
 
 //api key = f18a21a46c14735a21d43be4f3afb792
 
-https: var weatherApi = "https://api.openweathermap.org/data/2.5/forecast?";
+var weatherApi = "https://api.openweathermap.org/data/2.5/forecast?";
 
 var apiKey = "f18a21a46c14735a21d43be4f3afb792";
 
@@ -19,7 +19,7 @@ var apiKey = "f18a21a46c14735a21d43be4f3afb792";
 //responsible for getting the lat and lon for the city passed
 
 function grabCoordinates(city) {
-  var rootEndpoint = "http://api.openweathermap.org/geo/1.0/direct";
+  var rootEndpoint = "https://api.openweathermap.org/geo/1.0/direct";
 
   var apiCall = rootEndpoint + "?q=" + city + "&appid=" + apiKey;
 
@@ -60,7 +60,13 @@ function grabWeather(lat, lon) {
 //responsible for showing the current day forecast
 
 function showDayForecast(data) {
-  todayForecast.innerHTML = "";
+  todayForecast.textContent = "";
+  // console.log(data);
+  // console.log(data.city.name);
+  // console.log(data.list);
+  // console.log(data.list[0].dt_txt);
+  // console.log(data.list[0].wind.speed);
+  // console.log(data.list[0].main.humidity);
   var weatherIcon = `https://openweathermap.org/img/wn/${data.list[0].weather[0]["icon"]}.png`;
 
   var h1Name = document.createElement("h1");
@@ -120,12 +126,19 @@ function runSearch(e) {
   e.preventDefault();
   var field = fieldInput.value;
 
-  //make an api call and confirm data is sent back
+  //make an api call with that search term and confirm data is sent back
 
   grabCoordinates(field);
   storageSet(field);
+  // console.log("test");
 }
+function pastCity(e) {
+  e.preventDefault();
+  var field = this.textContent;
+  grabCoordinates(field);
 
+  //make an api call with that search term and confirm data is sent back
+}
 //LOCAL STORAGE
 
 var recentCity = [];
@@ -148,10 +161,10 @@ function createButtons(recentCity) {
     var storageButton = document.createElement("button");
     storageButton.textContent = recentCity[i];
     recent.appendChild(storageButton);
+    storageButton.addEventListener("click", pastCity);
   }
 }
 
 //EVENT LISTENERS
 
 searchBtn.addEventListener("click", runSearch);
-storageButton.addEventListener("click", runSearch);
