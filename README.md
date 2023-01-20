@@ -27,7 +27,7 @@ Follow the deployed link below.
 
 MIT License
 
-Copyright (c) 2022 Holiday-Wishlist-App
+Copyright (c) 2022 
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
