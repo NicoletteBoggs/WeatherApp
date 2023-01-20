@@ -55,6 +55,10 @@ Want to see more of my work?
 
 - [NicoletteBoggs](https://github.com/NicoletteBoggs)
 
+## Screenshot:
+
+![screenshot](screenshot.png)
+
 ## Contact Me:
 
 nrb1628@gmail.com
